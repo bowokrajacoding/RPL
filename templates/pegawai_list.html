@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Data Pegawai{% endblock %}
+{% block content %}
+<h2>👥 Data Pegawai</h2>
+
+<form method="GET">
+  <input type="text" name="q" placeholder="Cari nama..." value="{{ q }}">
+  <button type="submit">Cari</button>
+  <a href="{{ url_for('pegawai_add') }}">+ Tambah Pegawai</a>
+</form>
+
+<table border="1" cellpadding="5" cellspacing="0">
+  <tr>
+    <th>ID</th>
+    <th>Nama</th>
+    <th>Jabatan</th>
+    <th>NIP</th>
+  </tr>
+  {% for p in pegawais %}
+  <tr>
+    <td>{{ p.id }}</td>
+    <td>{{ p.nama }}</td>
+    <td>{{ p.jabatan }}</td>
+    <td>{{ p.nip }}</td>
+  </tr>
+  {% else %}
+  <tr><td colspan="4">Belum ada data pegawai</td></tr>
+  {% endfor %}
+</table>
+{% endblock %}

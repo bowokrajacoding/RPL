@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Surat Keluar{% endblock %}
+{% block content %}
+<h2>📤 Surat Keluar</h2>
+<form method="GET">
+  <input type="text" name="q" placeholder="Cari surat..." value="{{ q }}">
+  <button type="submit">Cari</button>
+  <a href="{{ url_for('surat_keluar_add') }}">+ Buat Surat Keluar</a>
+</form>
+
+<table border="1" cellpadding="5" cellspacing="0">
+  <tr>
+    <th>Nomor</th>
+    <th>Perihal</th>
+    <th>Tanggal</th>
+    <th>Tujuan</th>
+    <th>PDF</th>
+  </tr>
+  {% for s in mails %}
+  <tr>
+    <td>{{ s.nomor }}</td>
+    <td>{{ s.perihal }}</td>
+    <td>{{ s.tanggal }}</td>
+    <td>{{ s.tujuan }}</td>
+    <td>
+      {% if s.pdf_path %}
+        <a href="{{ url_for('uploaded_file', filename=s.pdf_path) }}" target="_blank">Download</a>
+      {% else %}
+        Belum dibuat
+      {% endif %}
+    </td>
+  </tr>
+  {% else %}
+  <tr><td colspan="5">Belum ada surat keluar</td></tr>
+  {% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}Sistem Arsip Surat{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <nav>
+    <a href="{{ url_for('dashboard') }}">🏠 Dashboard</a> |
+    <a href="{{ url_for('pegawai_list') }}">👥 Pegawai</a> |
+    <a href="{{ url_for('surat_masuk_list') }}">📩 Surat Masuk</a> |
+    <a href="{{ url_for('surat_keluar_list') }}">📤 Surat Keluar</a> |
+    <a href="{{ url_for('arsip_list') }}">🗂 Arsip</a> |
+    <a href="{{ url_for('logout') }}">🚪 Logout</a>
+  </nav>
+
+  <main>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <ul class="flashes">
+        {% for cat, msg in messages %}
+          <li class="{{ cat }}">{{ msg }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>

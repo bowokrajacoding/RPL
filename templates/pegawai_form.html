@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Tambah Pegawai{% endblock %}
+{% block content %}
+<h2>➕ Tambah Pegawai</h2>
+<form method="POST">
+  {{ form.hidden_tag() }}
+  <div>{{ form.nama.label }}<br>{{ form.nama(size=40) }}</div>
+  <div>{{ form.jabatan.label }}<br>{{ form.jabatan(size=40) }}</div>
+  <div>{{ form.nip.label }}<br>{{ form.nip(size=40) }}</div>
+  <div>{{ form.submit(class="btn") }}</div>
+</form>
+{% endblock %}

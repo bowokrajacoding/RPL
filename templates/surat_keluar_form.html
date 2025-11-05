@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Buat Surat Keluar{% endblock %}
+{% block content %}
+<h2>📝 Buat Surat Keluar</h2>
+<form method="POST">
+  {{ form.hidden_tag() }}
+  <div>{{ form.nomor.label }}<br>{{ form.nomor(size=40) }}</div>
+  <div>{{ form.perihal.label }}<br>{{ form.perihal(size=60) }}</div>
+  <div>{{ form.tanggal.label }}<br>{{ form.tanggal() }}</div>
+  <div>{{ form.tujuan.label }}<br>{{ form.tujuan(size=60) }}</div>
+  <div>{{ form.isi.label }}<br>{{ form.isi(rows=6, cols=60) }}</div>
+  <div>{{ form.assigned_to.label }}<br>{{ form.assigned_to(multiple=True) }}</div>
+  <div>{{ form.submit(class="btn") }}</div>
+</form>
+{% endblock %}

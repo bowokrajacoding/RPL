@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9fafc;
+    color: #333;
+    margin: 30px;
+}
+
+nav {
+    background: #0066cc;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-right: 15px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+h2 {
+    color: #0066cc;
+}
+
+.flashes li.success {
+    background: #d4edda;
+    color: #155724;
+}
+
+.flashes li.danger {
+    background: #f8d7da;
+    color: #721c24;
+}

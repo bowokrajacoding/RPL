@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <style>
+    body { font-family: "Arial", sans-serif; margin: 40px; }
+    h2 { text-align: center; }
+    .kop { text-align: center; font-weight: bold; margin-bottom: 20px; }
+    .isi { margin-top: 20px; line-height: 1.5; }
+    .ttd { margin-top: 80px; text-align: right; }
+  </style>
+</head>
+<body>
+  <div class="kop">
+    DINAS KESEHATAN BLUD PUSKESMAS KUTARAYA<br>
+    KABUPATEN OGAN KOMERING ILIR
+  </div>
+  <hr>
+  <p><strong>Nomor:</strong> {{ nomor }}<br>
+  <strong>Perihal:</strong> {{ perihal }}<br>
+  <strong>Tanggal:</strong> {{ tanggal }}</p>
+
+  <p><strong>Kepada Yth:</strong><br>{{ tujuan }}</p>
+
+  <div class="isi">
+    {{ isi | safe }}
+  </div>
+
+  {% if assigned_names %}
+  <p><strong>Ditugaskan kepada:</strong></p>
+  <ul>
+    {% for n in assigned_names %}
+      <li>{{ n }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+
+  <div class="ttd">
+    Hormat kami,<br><br><br>
+    (_________________________)<br>
+    Kepala Puskesmas Kutaraya
+  </div>
+</body>
+</html>

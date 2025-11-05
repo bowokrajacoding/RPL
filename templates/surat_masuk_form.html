@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Tambah Surat Masuk{% endblock %}
+{% block content %}
+<h2>➕ Tambah Surat Masuk</h2>
+<form method="POST" enctype="multipart/form-data">
+  {{ form.hidden_tag() }}
+  <div>{{ form.nomor.label }}<br>{{ form.nomor(size=40) }}</div>
+  <div>{{ form.asal.label }}<br>{{ form.asal(size=40) }}</div>
+  <div>{{ form.perihal.label }}<br>{{ form.perihal(size=60) }}</div>
+  <div>{{ form.tanggal_diterima.label }}<br>{{ form.tanggal_diterima() }}</div>
+  <div>{{ form.file.label }}<br>{{ form.file() }}</div>
+  <div>{{ form.submit(class="btn") }}</div>
+</form>
+{% endblock %}

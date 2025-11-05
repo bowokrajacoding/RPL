@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}Arsip Digital{% endblock %}
+{% block content %}
+<h2>🗂 Arsip Surat Masuk & Keluar</h2>
+<form method="GET">
+  <input type="text" name="q" placeholder="Cari nomor/perihal..." value="{{ q }}">
+  <button type="submit">Cari</button>
+</form>
+
+<h3>Surat Masuk</h3>
+<table border="1" cellpadding="5" cellspacing="0">
+  <tr>
+    <th>Nomor</th>
+    <th>Asal</th>
+    <th>Perihal</th>
+    <th>Tanggal</th>
+  </tr>
+  {% for s in incoming %}
+  <tr>
+    <td>{{ s.nomor }}</td>
+    <td>{{ s.asal }}</td>
+    <td>{{ s.perihal }}</td>
+    <td>{{ s.tanggal_diterima }}</td>
+  </tr>
+  {% else %}
+  <tr><td colspan="4">Tidak ada surat masuk</td></tr>
+  {% endfor %}
+</table>
+
+<h3>Surat Keluar</h3>
+<table border="1" cellpadding="5" cellspacing="0">
+  <tr>
+    <th>Nomor</th>
+    <th>Perihal</th>
+    <th>Tanggal</th>
+    <th>Tujuan</th>
+  </tr>
+  {% for s in outgoing %}
+  <tr>
+    <td>{{ s.nomor }}</td>
+    <td>{{ s.perihal }}</td>
+    <td>{{ s.tanggal }}</td>
+    <td>{{ s.tujuan }}</td>
+  </tr>
+  {% else %}
+  <tr><td colspan="4">Tidak ada surat keluar</td></tr>
+  {% endfor %}
+</table>
+{% endblock %}
