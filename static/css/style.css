@@ -1,45 +1,93 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f9fafc;
-    color: #333;
-    margin: 30px;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #f5f7fa;
+  color: #333;
+}
+
+header {
+  background: #0077b6;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.logo {
+  height: 60px;
+  vertical-align: middle;
 }
 
 nav {
-    background: #0066cc;
-    padding: 10px;
-    border-radius: 8px;
-    margin-bottom: 20px;
+  background: #023e8a;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.5rem;
 }
 
 nav a {
-    color: white;
-    text-decoration: none;
-    margin-right: 15px;
-    font-weight: bold;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 nav a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 main {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 2rem;
 }
 
-h2 {
-    color: #0066cc;
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
 }
 
-.flashes li.success {
-    background: #d4edda;
-    color: #155724;
+th, td {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
 }
 
-.flashes li.danger {
-    background: #f8d7da;
-    color: #721c24;
+th {
+  background: #e7f1ff;
+  text-align: left;
+}
+
+input[type=text], input[type=date], input[type=file], select, textarea {
+  width: 100%;
+  padding: 8px;
+  margin: 4px 0;
+  box-sizing: border-box;
+}
+
+button, a.button {
+  background: #0077b6;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+button:hover, a.button:hover {
+  background: #005f8a;
+}
+
+.flash-container {
+  margin: 1rem 0;
+}
+
+.alert.success { background: #c7f9cc; padding: 10px; }
+.alert.danger { background: #f8d7da; padding: 10px; }
+.alert.warning { background: #fff3cd; padding: 10px; }
+
+footer {
+  text-align: center;
+  background: #023e8a;
+  color: white;
+  padding: 0.5rem;
+  margin-top: 2rem;
 }
